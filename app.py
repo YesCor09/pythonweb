@@ -9,12 +9,12 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
 
 # Cargar el modelo entrenado
-model = joblib.load('modelo-insectos.pkl')
+model = joblib.load('model.pkl')
 app.logger.debug('Modelo cargado correctamente.')
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('formulario.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
